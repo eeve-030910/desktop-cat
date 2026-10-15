@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "minimum_version": "0.4.0",
+  "latest_version": "0.4.0",
+  "download_url": "https://YOUR-DOMAIN.example/download",
+  "catalog_url": "https://YOUR-DOMAIN.example/characters/catalog.json",
+  "message": "新しいバージョンに更新してください。"
+}

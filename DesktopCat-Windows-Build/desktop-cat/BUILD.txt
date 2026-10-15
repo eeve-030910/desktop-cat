@@ -1,0 +1,23 @@
+Windows実行ファイルの作り分け v0.4.5
+
+開発版: BUILD_EXE.bat をダブルクリック。
+・更新URLは不要。更新確認の通信をせずに起動します。
+・dist\DesktopCat-Dev-v0.4.5.exe を生成します。
+・GUIに「開発版・更新確認なし」と表示。
+・ネコ、犬、スズメ、歩行、睡眠、ごはん、ハートを試せます。
+
+一般配布版: update_config.jsonを設定して BUILD_RELEASE.bat。
+・公開HTTPS更新URLが未設定ならビルドを止めます。
+・dist\DesktopCat-v0.4.5.exe を生成します。
+・起動時と15分ごとに更新確認。最低対応版未満、通信失敗時は利用を止めます。
+・Inno Setupがあれば一般配布版のインストーラーも作成します。
+
+チャネルはビルド時に専用の作業用フォルダーへ書き込みます。
+一般配布版EXEに、設定ファイルや起動引数で開発版へ切り替える機能はありません。
+
+CREATE_DESKTOP_SHORTCUT.bat は開発版のショートカットを作ります。
+一般配布版のショートカットはPowerShellで次を実行:
+powershell -NoProfile -ExecutionPolicy Bypass -File .\create_desktop_shortcut.ps1 -Channel Release
+
+作成時だけPython 3とネット接続が必要。EXEの利用者にはPython不要です。
+Windows実機のビルド・動作検証は未実施です。
